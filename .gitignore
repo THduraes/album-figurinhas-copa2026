@@ -1,0 +1,30 @@
+# Android Studio
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Kotlin
+*.class
+*.jar
+*.war
+*.ear
+
+# Firebase
+google-services.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+*.code-workspace
