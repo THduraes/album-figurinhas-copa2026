@@ -1,0 +1,120 @@
+{
+  "id": "copa_mundo_2026",
+  "name": "Copa do Mundo",
+  "edition": "2026",
+  "trophyImage": "",
+  "teams": [
+    {
+      "id": "brasil",
+      "name": "Brasil",
+      "victories": 5,
+      "description": "Dados demonstrativos para o desenvolvimento da tela da equipe.",
+      "badge": "",
+      "colors": ["#FFDF00", "#009C3B", "#002776"],
+      "coach": {
+        "id": "brasil-coach",
+        "name": "Treinador do Brasil",
+        "photo": "",
+        "description": "Perfil demonstrativo do treinador."
+      },
+      "players": [
+        {
+          "id": "brasil-10",
+          "name": "Neymar",
+          "position": "Atacante",
+          "number": 10,
+          "photo": "",
+          "stats": {"goals": 79, "assists": 55, "matches": 128}
+        },
+        {
+          "id": "brasil-7",
+          "name": "Vinicius Jr.",
+          "position": "Atacante",
+          "number": 7,
+          "photo": "",
+          "stats": {"goals": 6, "assists": 5, "matches": 35}
+        },
+        {
+          "id": "brasil-5",
+          "name": "Casemiro",
+          "position": "Meio-campo",
+          "number": 5,
+          "photo": "",
+          "stats": {"goals": 7, "assists": 3, "matches": 75}
+        },
+        {
+          "id": "brasil-1",
+          "name": "Alisson",
+          "position": "Goleiro",
+          "number": 1,
+          "photo": "",
+          "stats": {"goals": 0, "assists": 0, "matches": 71}
+        },
+        {
+          "id": "brasil-3",
+          "name": "Marquinhos",
+          "position": "Zagueiro",
+          "number": 3,
+          "photo": "",
+          "stats": {"goals": 7, "assists": 2, "matches": 95}
+        }
+      ]
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina",
+      "victories": 3,
+      "description": "Dados demonstrativos para validar listas e navegacao.",
+      "badge": "",
+      "colors": ["#74ACDF", "#FFFFFF", "#F6B40E"],
+      "coach": {
+        "id": "argentina-coach",
+        "name": "Treinador da Argentina",
+        "photo": "",
+        "description": "Perfil demonstrativo do treinador."
+      },
+      "players": [
+        {
+          "id": "argentina-10",
+          "name": "Jogador 10",
+          "position": "Atacante",
+          "number": 10,
+          "photo": "",
+          "stats": {"goals": 15, "assists": 9, "matches": 40}
+        },
+        {
+          "id": "argentina-9",
+          "name": "Jogador 9",
+          "position": "Atacante",
+          "number": 9,
+          "photo": "",
+          "stats": {"goals": 12, "assists": 4, "matches": 33}
+        },
+        {
+          "id": "argentina-7",
+          "name": "Jogador 7",
+          "position": "Meio-campo",
+          "number": 7,
+          "photo": "",
+          "stats": {"goals": 5, "assists": 11, "matches": 38}
+        },
+        {
+          "id": "argentina-4",
+          "name": "Jogador 4",
+          "position": "Zagueiro",
+          "number": 4,
+          "photo": "",
+          "stats": {"goals": 2, "assists": 1, "matches": 41}
+        },
+        {
+          "id": "argentina-1",
+          "name": "Jogador 1",
+          "position": "Goleiro",
+          "number": 1,
+          "photo": "",
+          "stats": {"goals": 0, "assists": 0, "matches": 36}
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 /local.properties
 /.idea/
 .DS_Store
-/build/
+build/
 /captures
 .externalNativeBuild
 .cxx
@@ -13,11 +13,20 @@ local.properties
 # Kotlin
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.ear
 
 # Firebase
 google-services.json
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+firebase/node_modules/
+*firebase-adminsdk*.json
+service-account*.json
 
 # OS
 .DS_Store
@@ -28,3 +37,6 @@ Thumbs.db
 # IDE
 .vscode/
 *.code-workspace
+
+# Codex temporary files
+.codex-tmp/
