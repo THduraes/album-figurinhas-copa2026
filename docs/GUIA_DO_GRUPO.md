@@ -158,6 +158,67 @@ npm.cmd run seed:emulator
 Defina `useFirebaseEmulator=true` no `local.properties` somente quando quiser
 usar esse emulador. Para o Firebase real, use `useFirebaseEmulator=false`.
 
+## Como popular o banco e trabalhar com imagens
+
+As regras atuais permitem que o aplicativo leia competicoes, equipes e
+jogadores, mas bloqueiam qualquer escrita feita pelo app. Compartilhar
+`google-services.json` nao concede permissao para criar, alterar ou excluir
+documentos.
+
+Os acessos funcionam assim:
+
+| Acesso do integrante | O que pode fazer |
+|---|---|
+| Somente `google-services.json` | Executar o app e ler os dados permitidos pelas regras |
+| Viewer no projeto Firebase | Consultar o Console, sem alterar os dados |
+| Editor no projeto Firebase | Criar e alterar documentos diretamente pelo Console |
+
+Mesmo que um integrante seja Editor no Console, as escritas feitas pelo
+aplicativo Android continuam bloqueadas pelas regras em `firestore.rules`. O
+acesso do Console e o acesso do aplicativo sao mecanismos diferentes.
+
+### Fluxo recomendado para adicionar dados
+
+Para manter as alteracoes revisaveis e evitar que o banco fique diferente do
+codigo, o grupo deve usar este fluxo:
+
+1. Crie uma branch para a alteracao.
+2. Edite `firebase/seed-data.json` com equipes, jogadores, treinadores,
+   estatisticas e URLs de imagens.
+3. Teste a carga no Firebase Emulator.
+4. Envie a alteracao por Pull Request.
+5. Apos a revisao, o responsavel pela integracao aplica o seed no Firebase real
+   usando uma credencial administrativa temporaria e a revoga ao terminar.
+
+Para testar localmente:
+
+```powershell
+cd firebase
+npm.cmd ci
+npm.cmd run seed:emulator:once
+```
+
+Um Editor pode alterar documentos manualmente pelo Console, mas essas mudancas
+nao ficam registradas no Git. Por isso, a edicao direta deve ser reservada para
+correcoes pontuais e tambem reproduzida em `firebase/seed-data.json`.
+
+### Imagens
+
+O Firestore armazena os dados e as URLs das imagens, nao os arquivos binarios.
+O modelo atual possui campos como `trophyImage`, `badge` e `photo`.
+
+As opcoes atuais sao:
+
+- hospedar a imagem em um servico externo e salvar sua URL no seed;
+- adicionar a imagem ao aplicativo em `app/src/main/res/drawable` quando ela
+  fizer parte fixa da interface;
+- configurar Firebase Storage futuramente para upload e armazenamento dos
+  arquivos, salvando no Firestore apenas a URL gerada.
+
+O Firebase Storage ainda nao esta configurado neste projeto. Adiciona-lo exige
+definir regras de acesso, dependencias Android e o fluxo de upload antes de o
+grupo enviar imagens por ele.
+
 ## Divisao sugerida
 
 | Responsabilidade | Arquivos principais | Branch sugerida |
