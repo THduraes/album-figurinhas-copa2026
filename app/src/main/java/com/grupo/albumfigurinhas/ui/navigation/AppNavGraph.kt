@@ -1,6 +1,7 @@
 package com.grupo.albumfigurinhas.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -14,12 +15,16 @@ import com.grupo.albumfigurinhas.data.repository.CompetitionRepository
 import com.grupo.albumfigurinhas.ui.screens.CoachDetailScreen
 import com.grupo.albumfigurinhas.ui.screens.CompetitionScreen
 import com.grupo.albumfigurinhas.ui.screens.PlayerDetailScreen
+import com.grupo.albumfigurinhas.ui.screens.SplashScreen
 import com.grupo.albumfigurinhas.ui.screens.TeamScreen
 import com.grupo.albumfigurinhas.viewmodel.CoachViewModel
 import com.grupo.albumfigurinhas.viewmodel.CompetitionViewModel
 import com.grupo.albumfigurinhas.viewmodel.PlayerViewModel
 import com.grupo.albumfigurinhas.viewmodel.TeamViewModel
 import com.grupo.albumfigurinhas.viewmodel.albumViewModelFactory
+import kotlinx.coroutines.delay
+
+private const val SPLASH_DURATION_MILLIS = 1200L
 
 @Composable
 fun AlbumNavGraph(repository: CompetitionRepository) {
@@ -27,8 +32,19 @@ fun AlbumNavGraph(repository: CompetitionRepository) {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Competition.route,
+        startDestination = Screen.Splash.route,
     ) {
+        composable(Screen.Splash.route) {
+            LaunchedEffect(Unit) {
+                delay(SPLASH_DURATION_MILLIS)
+                navController.navigate(Screen.Competition.route) {
+                    popUpTo(Screen.Splash.route) { inclusive = true }
+                }
+            }
+
+            SplashScreen()
+        }
+
         composable(Screen.Competition.route) {
             val factory = remember(repository) {
                 albumViewModelFactory { CompetitionViewModel(repository) }

@@ -3,6 +3,8 @@ package com.grupo.albumfigurinhas.ui.navigation
 import android.net.Uri
 
 sealed class Screen(val route: String) {
+    data object Splash : Screen("splash")
+
     data object Competition : Screen("competition")
 
     data object Team : Screen("team/{teamId}") {

@@ -34,11 +34,14 @@ Todos os ViewModels publicam `UiState<T>` com tres possibilidades:
 As rotas ficam centralizadas em `ui/navigation/Screen.kt`:
 
 ```text
+splash
 competition
 team/{teamId}
 player/{playerId}
 coach/{coachId}
 ```
+
+`splash` e o destino inicial do `NavHost`. Ele exibe `ui/screens/SplashScreen.kt` por um tempo minimo de exibicao e navega para `competition`, removendo-se da pilha de navegacao (`popUpTo` com `inclusive = true`).
 
 Somente IDs trafegam na navegacao. Objetos completos sao carregados pelo ViewModel, o que evita limites de tamanho e dados desatualizados no `Bundle`.
 
