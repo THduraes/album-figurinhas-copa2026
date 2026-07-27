@@ -107,14 +107,14 @@ private fun TeamContent(
     val teamGreen = if (team.id == "brasil") {
         Color(0xFF116A2D)
     } else {
-        team.colors.getOrNull(1)?.toComposeColor()
+        team.colors.firstOrNull()?.toComposeColor()
             ?: MaterialTheme.colorScheme.primary
     }
 
     val teamYellow = if (team.id == "brasil") {
         Color(0xFFFFDC0B)
     } else {
-        team.colors.firstOrNull()?.toComposeColor()
+        team.colors.getOrNull(1)?.toComposeColor()
             ?: MaterialTheme.colorScheme.secondary
     }
 
@@ -264,9 +264,11 @@ private fun TeamHeader(
             .aspectRatio(393f / 321f)
             .background(green),
     ) {
-        if (team.id == "brasil") {
+        val backgroundResource = localTeamBackground(team.id)
+
+        if (backgroundResource != null) {
             Image(
-                painter = painterResource(R.drawable.fundo_time_brasil),
+                painter = painterResource(backgroundResource),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
@@ -517,13 +519,27 @@ private fun String.toComposeColor(): Color? {
     }.getOrNull()
 }
 
-private fun localTeamBadge(teamId: String): Int? {
+private fun localTeamBackground(teamId: String): Int? {
     return when (teamId) {
-        "brasil" -> R.drawable.escudo_brasil
+        "brasil" -> R.drawable.fundo_time_brasil
+        "franca" -> R.drawable.fundo_time_franca
+        "cabo-verde" -> R.drawable.fundo_time_cabo_verde
+        "japao" -> R.drawable.fundo_time_japao
+        "eua" -> R.drawable.fundo_time_eua
         else -> null
     }
 }
 
+private fun localTeamBadge(teamId: String): Int? {
+    return when (teamId) {
+        "brasil" -> R.drawable.escudo_brasil
+        "franca" -> R.drawable.escudo_franca
+        "cabo-verde" -> R.drawable.escudo_cabo_verde
+        "japao" -> R.drawable.escudo_japao
+        "eua" -> R.drawable.escudo_eua
+        else -> null
+    }
+}
 private fun localPlayerImage(playerId: String): Int? {
     return when (playerId) {
         "brasil-1" -> R.drawable.alisson_elenco
@@ -531,6 +547,26 @@ private fun localPlayerImage(playerId: String): Int? {
         "brasil-7" -> R.drawable.vini_elenco
         "brasil-10" -> R.drawable.neymar_elenco
         "brasil-19" -> R.drawable.endrick_elenco
+        "franca-10" -> R.drawable.mbappe_elenco
+        "franca-7" -> R.drawable.dembele_elenco
+        "franca-14" -> R.drawable.doue_elenco
+        "franca-11" -> R.drawable.olise_elenco
+        "franca-16" -> R.drawable.maignan_elenco
+        "cabo-verde-1" -> R.drawable.vozinha_elenco
+        "cabo-verde-4" -> R.drawable.duarte_elenco
+        "cabo-verde-9" -> R.drawable.livramento_elenco
+        "cabo-verde-20" -> R.drawable.ryan_elenco
+        "cabo-verde-11" -> R.drawable.benchimol_elenco
+        "japao-10" -> R.drawable.doan_elenco
+        "japao-4" -> R.drawable.itakura_elenco
+        "japao-13" -> R.drawable.nakamura_elenco
+        "japao-23" -> R.drawable.suzuki_elenco
+        "japao-9" -> R.drawable.ueda_elenco
+        "eua-10" -> R.drawable.pulisic_elenco
+        "eua-8" -> R.drawable.mckennie_elenco
+        "eua-20" -> R.drawable.balogun_elenco
+        "eua-2" -> R.drawable.dest_elenco
+        "eua-1" -> R.drawable.freese_elenco
         else -> null
     }
 }
@@ -538,6 +574,10 @@ private fun localPlayerImage(playerId: String): Int? {
 private fun localCoachImage(coachId: String): Int? {
     return when (coachId) {
         "brasil-coach" -> R.drawable.ancelotti_elenco
+        "franca-coach" -> R.drawable.deschamps_elenco
+        "cabo-verde-coach" -> R.drawable.bubista_elenco
+        "japao-coach" -> R.drawable.hajime_elenco
+        "eua-coach" -> R.drawable.pochettino_elenco
         else -> null
     }
 }
@@ -545,6 +585,7 @@ private fun localCoachImage(coachId: String): Int? {
 private fun localTitleYears(teamId: String): List<String> {
     return when (teamId) {
         "brasil" -> listOf("1958", "1962", "1970", "1994", "2002")
+        "franca" -> listOf("1998", "2018")
         else -> emptyList()
     }
 }
