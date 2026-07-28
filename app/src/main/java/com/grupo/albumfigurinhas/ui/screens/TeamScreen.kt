@@ -53,6 +53,8 @@ import coil3.compose.AsyncImage
 import com.grupo.albumfigurinhas.R
 import com.grupo.albumfigurinhas.data.model.Team
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
+import com.grupo.albumfigurinhas.ui.components.coachPhotoModel
+import com.grupo.albumfigurinhas.ui.components.playerPhotoModel
 import com.grupo.albumfigurinhas.ui.state.UiState
 
 private val Poppins = FontFamily(
@@ -124,9 +126,7 @@ private fun TeamContent(
                 id = player.id,
                 name = player.name,
                 subtitle = "${player.number} - ${player.position}",
-                photoModel = player.photo
-                    .takeIf { it.isNotBlank() }
-                    ?: localPlayerImage(player.id),
+                photoModel = playerPhotoModel(player),
                 isCoach = false,
             )
         }
@@ -135,9 +135,7 @@ private fun TeamContent(
             id = team.coach.id,
             name = team.coach.name.substringAfterLast(" "),
             subtitle = "Treinador",
-            photoModel = team.coach.photo
-                .takeIf { it.isNotBlank() }
-                ?: localCoachImage(team.coach.id),
+            photoModel = coachPhotoModel(team.coach),
             isCoach = true,
         )
     }
@@ -540,48 +538,6 @@ private fun localTeamBadge(teamId: String): Int? {
         else -> null
     }
 }
-private fun localPlayerImage(playerId: String): Int? {
-    return when (playerId) {
-        "brasil-1" -> R.drawable.alisson_elenco
-        "brasil-3" -> R.drawable.marquinhos_elenco
-        "brasil-7" -> R.drawable.vini_elenco
-        "brasil-10" -> R.drawable.neymar_elenco
-        "brasil-19" -> R.drawable.endrick_elenco
-        "franca-10" -> R.drawable.mbappe_elenco
-        "franca-7" -> R.drawable.dembele_elenco
-        "franca-14" -> R.drawable.doue_elenco
-        "franca-11" -> R.drawable.olise_elenco
-        "franca-16" -> R.drawable.maignan_elenco
-        "cabo-verde-1" -> R.drawable.vozinha_elenco
-        "cabo-verde-4" -> R.drawable.duarte_elenco
-        "cabo-verde-9" -> R.drawable.livramento_elenco
-        "cabo-verde-20" -> R.drawable.ryan_elenco
-        "cabo-verde-11" -> R.drawable.benchimol_elenco
-        "japao-10" -> R.drawable.doan_elenco
-        "japao-4" -> R.drawable.itakura_elenco
-        "japao-13" -> R.drawable.nakamura_elenco
-        "japao-23" -> R.drawable.suzuki_elenco
-        "japao-9" -> R.drawable.ueda_elenco
-        "eua-10" -> R.drawable.pulisic_elenco
-        "eua-8" -> R.drawable.mckennie_elenco
-        "eua-20" -> R.drawable.balogun_elenco
-        "eua-2" -> R.drawable.dest_elenco
-        "eua-1" -> R.drawable.freese_elenco
-        else -> null
-    }
-}
-
-private fun localCoachImage(coachId: String): Int? {
-    return when (coachId) {
-        "brasil-coach" -> R.drawable.ancelotti_elenco
-        "franca-coach" -> R.drawable.deschamps_elenco
-        "cabo-verde-coach" -> R.drawable.bubista_elenco
-        "japao-coach" -> R.drawable.hajime_elenco
-        "eua-coach" -> R.drawable.pochettino_elenco
-        else -> null
-    }
-}
-
 private fun localTitleYears(teamId: String): List<String> {
     return when (teamId) {
         "brasil" -> listOf("1958", "1962", "1970", "1994", "2002")
