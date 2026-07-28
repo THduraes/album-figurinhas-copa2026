@@ -1,6 +1,7 @@
 package com.grupo.albumfigurinhas.data.remote
 
 import com.grupo.albumfigurinhas.data.model.Coach
+import com.grupo.albumfigurinhas.data.model.CoachStats
 import com.grupo.albumfigurinhas.data.model.Competition
 import com.grupo.albumfigurinhas.data.model.Player
 import com.grupo.albumfigurinhas.data.model.PlayerStats
@@ -40,20 +41,32 @@ internal object FirestoreDataMapper {
             position = data.requiredString("position", "jogador $id"),
             number = data.requiredInt("number", "jogador $id"),
             photo = data.optionalString("photo"),
+            birthDate = data.optionalString("birthDate"),
             stats = stats,
         )
     }
 
-    private fun Map<*, *>.toCoach(defaultId: String, context: String) = Coach(
-        id = this["id"] as? String ?: defaultId,
-        name = requiredString("name", "treinador da $context"),
-        photo = optionalString("photo"),
-        description = optionalString("description"),
-    )
+    private fun Map<*, *>.toCoach(defaultId: String, context: String): Coach {
+        val stats = (this["stats"] as? Map<*, *>)?.toCoachStats("treinador da $context")
+        return Coach(
+            id = this["id"] as? String ?: defaultId,
+            name = requiredString("name", "treinador da $context"),
+            photo = optionalString("photo"),
+            description = optionalString("description"),
+            birthDate = optionalString("birthDate"),
+            stats = stats,
+        )
+    }
 
     private fun Map<*, *>.toPlayerStats(context: String) = PlayerStats(
         goals = requiredInt("goals", "estatisticas do $context"),
         assists = requiredInt("assists", "estatisticas do $context"),
+        matches = requiredInt("matches", "estatisticas do $context"),
+    )
+
+    private fun Map<*, *>.toCoachStats(context: String) = CoachStats(
+        wins = requiredInt("wins", "estatisticas do $context"),
+        losses = requiredInt("losses", "estatisticas do $context"),
         matches = requiredInt("matches", "estatisticas do $context"),
     )
 

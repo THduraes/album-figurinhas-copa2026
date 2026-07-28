@@ -73,8 +73,8 @@ fun AlbumNavGraph(repository: CompetitionRepository) {
             TeamScreen(
                 uiState = uiState,
                 onBack = navController::navigateUp,
-                onPlayerClick = { navController.navigate(Screen.PlayerDetail.createRoute(it)) },
-                onCoachClick = { navController.navigate(Screen.CoachDetail.createRoute(it)) },
+                onPlayerClick = { navController.navigate(Screen.PlayerDetail.createRoute(teamId, it)) },
+                onCoachClick = { navController.navigate(Screen.CoachDetail.createRoute(teamId, it)) },
                 onRetry = viewModel::retry,
             )
         }
@@ -82,14 +82,18 @@ fun AlbumNavGraph(repository: CompetitionRepository) {
         composable(
             route = Screen.PlayerDetail.route,
             arguments = listOf(
+                navArgument(Screen.PlayerDetail.ARG_TEAM_ID) { type = NavType.StringType },
                 navArgument(Screen.PlayerDetail.ARG_PLAYER_ID) { type = NavType.StringType },
             ),
         ) { backStackEntry ->
+            val teamId = requireNotNull(
+                backStackEntry.arguments?.getString(Screen.PlayerDetail.ARG_TEAM_ID),
+            )
             val playerId = requireNotNull(
                 backStackEntry.arguments?.getString(Screen.PlayerDetail.ARG_PLAYER_ID),
             )
-            val factory = remember(repository, playerId) {
-                albumViewModelFactory { PlayerViewModel(playerId, repository) }
+            val factory = remember(repository, teamId, playerId) {
+                albumViewModelFactory { PlayerViewModel(teamId, playerId, repository) }
             }
             val viewModel: PlayerViewModel = viewModel(factory = factory)
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -103,13 +107,19 @@ fun AlbumNavGraph(repository: CompetitionRepository) {
 
         composable(
             route = Screen.CoachDetail.route,
-            arguments = listOf(navArgument(Screen.CoachDetail.ARG_COACH_ID) { type = NavType.StringType }),
+            arguments = listOf(
+                navArgument(Screen.CoachDetail.ARG_TEAM_ID) { type = NavType.StringType },
+                navArgument(Screen.CoachDetail.ARG_COACH_ID) { type = NavType.StringType },
+            ),
         ) { backStackEntry ->
+            val teamId = requireNotNull(
+                backStackEntry.arguments?.getString(Screen.CoachDetail.ARG_TEAM_ID),
+            )
             val coachId = requireNotNull(
                 backStackEntry.arguments?.getString(Screen.CoachDetail.ARG_COACH_ID),
             )
-            val factory = remember(repository, coachId) {
-                albumViewModelFactory { CoachViewModel(coachId, repository) }
+            val factory = remember(repository, teamId, coachId) {
+                albumViewModelFactory { CoachViewModel(teamId, coachId, repository) }
             }
             val viewModel: CoachViewModel = viewModel(factory = factory)
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
