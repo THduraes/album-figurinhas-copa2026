@@ -8,47 +8,27 @@
       "id": "brasil",
       "name": "Brasil",
       "victories": 5,
-      "description": "Dados demonstrativos para o desenvolvimento da tela da equipe.",
+      "description": "A Seleção Brasileira é a maior vencedora da história das Copas do Mundo, com cinco títulos. Conhecida pelo futebol ofensivo e pela habilidade de seus jogadores, revelou lendas como Pelé, Ronaldo e Neymar. É reconhecida mundialmente por sua tradição e paixão pelo esporte.",
       "badge": "",
       "colors": ["#FFDF00", "#009C3B", "#002776"],
       "coach": {
         "id": "brasil-coach",
-        "name": "Treinador do Brasil",
+        "name": "Carlo Ancelotti",
         "photo": "",
-        "description": "Perfil demonstrativo do treinador."
+        "description": "Treinador da Seleção Brasileira."
       },
       "players": [
         {
           "id": "brasil-10",
-          "name": "Neymar",
+          "name": "Neymar Jr.",
           "position": "Atacante",
           "number": 10,
           "photo": "",
-          "stats": {"goals": 79, "assists": 55, "matches": 128}
-        },
-        {
-          "id": "brasil-7",
-          "name": "Vinicius Jr.",
-          "position": "Atacante",
-          "number": 7,
-          "photo": "",
-          "stats": {"goals": 6, "assists": 5, "matches": 35}
-        },
-        {
-          "id": "brasil-5",
-          "name": "Casemiro",
-          "position": "Meio-campo",
-          "number": 5,
-          "photo": "",
-          "stats": {"goals": 7, "assists": 3, "matches": 75}
-        },
-        {
-          "id": "brasil-1",
-          "name": "Alisson",
-          "position": "Goleiro",
-          "number": 1,
-          "photo": "",
-          "stats": {"goals": 0, "assists": 0, "matches": 71}
+          "stats": {
+            "goals": 79,
+            "assists": 55,
+            "matches": 128
+          }
         },
         {
           "id": "brasil-3",
@@ -56,63 +36,351 @@
           "position": "Zagueiro",
           "number": 3,
           "photo": "",
-          "stats": {"goals": 7, "assists": 2, "matches": 95}
+          "stats": {
+            "goals": 7,
+            "assists": 2,
+            "matches": 95
+          }
+        },
+        {
+          "id": "brasil-7",
+          "name": "Vinicius Jr.",
+          "position": "Atacante",
+          "number": 7,
+          "photo": "",
+          "stats": {
+            "goals": 6,
+            "assists": 5,
+            "matches": 35
+          }
+        },
+        {
+          "id": "brasil-19",
+          "name": "Endrick",
+          "position": "Atacante",
+          "number": 19,
+          "photo": "",
+          "stats": {
+            "goals": 3,
+            "assists": 0,
+            "matches": 14
+          }
+        },
+        {
+          "id": "brasil-1",
+          "name": "Alisson",
+          "position": "Goleiro",
+          "number": 1,
+          "photo": "",
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "matches": 71
+          }
         }
       ]
     },
     {
-      "id": "argentina",
-      "name": "Argentina",
-      "victories": 3,
-      "description": "Dados demonstrativos para validar listas e navegacao.",
+      "id": "franca",
+      "name": "França",
+      "victories": 2,
+      "description": "A Seleção Francesa é uma das potências do futebol mundial, com dois títulos da Copa do Mundo. Destaca-se pela combinação de técnica, velocidade e força física. Ao longo dos anos, contou com grandes jogadores como Zidane, Henry e Mbappé.",
       "badge": "",
-      "colors": ["#74ACDF", "#FFFFFF", "#F6B40E"],
+      "colors": ["#232763", "#D91C20"],
       "coach": {
-        "id": "argentina-coach",
-        "name": "Treinador da Argentina",
+        "id": "franca-coach",
+        "name": "Didier Deschamps",
         "photo": "",
-        "description": "Perfil demonstrativo do treinador."
+        "description": "Treinador da Seleção Francesa."
       },
       "players": [
         {
-          "id": "argentina-10",
-          "name": "Jogador 10",
+          "id": "franca-10",
+          "name": "Mbappé",
           "position": "Atacante",
           "number": 10,
           "photo": "",
-          "stats": {"goals": 15, "assists": 9, "matches": 40}
+          "stats": {
+            "goals": 52,
+            "assists": 34,
+            "matches": 93
+          }
         },
         {
-          "id": "argentina-9",
-          "name": "Jogador 9",
+          "id": "franca-7",
+          "name": "Dembélé",
           "position": "Atacante",
-          "number": 9,
-          "photo": "",
-          "stats": {"goals": 12, "assists": 4, "matches": 33}
-        },
-        {
-          "id": "argentina-7",
-          "name": "Jogador 7",
-          "position": "Meio-campo",
           "number": 7,
           "photo": "",
-          "stats": {"goals": 5, "assists": 11, "matches": 38}
+          "stats": {
+            "goals": 7,
+            "assists": 9,
+            "matches": 55
+          }
         },
         {
-          "id": "argentina-4",
-          "name": "Jogador 4",
-          "position": "Zagueiro",
-          "number": 4,
+          "id": "franca-14",
+          "name": "Doué",
+          "position": "Atacante",
+          "number": 14,
           "photo": "",
-          "stats": {"goals": 2, "assists": 1, "matches": 41}
+          "stats": {
+            "goals": 1,
+            "assists": 1,
+            "matches": 8
+          }
         },
         {
-          "id": "argentina-1",
-          "name": "Jogador 1",
+          "id": "franca-11",
+          "name": "Olise",
+          "position": "Meio-campo",
+          "number": 11,
+          "photo": "",
+          "stats": {
+            "goals": 5,
+            "assists": 7,
+            "matches": 15
+          }
+        },
+        {
+          "id": "franca-16",
+          "name": "Maignan",
+          "position": "Goleiro",
+          "number": 16,
+          "photo": "",
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "matches": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "cabo-verde",
+      "name": "Cabo Verde",
+      "victories": 0,
+      "description": "A Seleção de Cabo Verde representa um dos países africanos que mais cresceram no cenário internacional. Conhecida pela organização tática e espírito de equipe, vem conquistando espaço em competições continentais. Sua evolução reflete o desenvolvimento do futebol no país.",
+      "badge": "",
+      "colors": ["#022C5C", "#DA2631"],
+      "coach": {
+        "id": "cabo-verde-coach",
+        "name": "Bubista",
+        "photo": "",
+        "description": "Treinador da Seleção de Cabo Verde."
+      },
+      "players": [
+        {
+          "id": "cabo-verde-1",
+          "name": "Vozinha",
           "position": "Goleiro",
           "number": 1,
           "photo": "",
-          "stats": {"goals": 0, "assists": 0, "matches": 36}
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "matches": 60
+          }
+        },
+        {
+          "id": "cabo-verde-4",
+          "name": "Duarte",
+          "position": "Zagueiro",
+          "number": 4,
+          "photo": "",
+          "stats": {
+            "goals": 1,
+            "assists": 0,
+            "matches": 25
+          }
+        },
+        {
+          "id": "cabo-verde-9",
+          "name": "Livramento",
+          "position": "Atacante",
+          "number": 9,
+          "photo": "",
+          "stats": {
+            "goals": 4,
+            "assists": 2,
+            "matches": 18
+          }
+        },
+        {
+          "id": "cabo-verde-20",
+          "name": "Ryan Mendes",
+          "position": "Atacante",
+          "number": 20,
+          "photo": "",
+          "stats": {
+            "goals": 20,
+            "assists": 8,
+            "matches": 80
+          }
+        },
+        {
+          "id": "cabo-verde-11",
+          "name": "Benchimol",
+          "position": "Atacante",
+          "number": 11,
+          "photo": "",
+          "stats": {
+            "goals": 3,
+            "assists": 1,
+            "matches": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "japao",
+      "name": "Japão",
+      "victories": 0,
+      "description": "A Seleção Japonesa é uma das mais fortes da Ásia e referência em disciplina tática. Destaca-se pela velocidade, organização e trabalho coletivo. Participa regularmente de competições internacionais e tem ampliado sua relevância no futebol mundial.",
+      "badge": "",
+      "colors": ["#0E131A", "#D70D18"],
+      "coach": {
+        "id": "japao-coach",
+        "name": "Hajime Moriyasu",
+        "photo": "",
+        "description": "Treinador da Seleção Japonesa."
+      },
+      "players": [
+        {
+          "id": "japao-10",
+          "name": "Ritsu Doan",
+          "position": "Meio-campo",
+          "number": 10,
+          "photo": "",
+          "stats": {
+            "goals": 10,
+            "assists": 8,
+            "matches": 57
+          }
+        },
+        {
+          "id": "japao-4",
+          "name": "Ko Itakura",
+          "position": "Zagueiro",
+          "number": 4,
+          "photo": "",
+          "stats": {
+            "goals": 3,
+            "assists": 2,
+            "matches": 40
+          }
+        },
+        {
+          "id": "japao-13",
+          "name": "Keito Nakamura",
+          "position": "Atacante",
+          "number": 13,
+          "photo": "",
+          "stats": {
+            "goals": 8,
+            "assists": 4,
+            "matches": 20
+          }
+        },
+        {
+          "id": "japao-23",
+          "name": "Zion Suzuki",
+          "position": "Goleiro",
+          "number": 23,
+          "photo": "",
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "matches": 20
+          }
+        },
+        {
+          "id": "japao-9",
+          "name": "Ayase Ueda",
+          "position": "Atacante",
+          "number": 9,
+          "photo": "",
+          "stats": {
+            "goals": 14,
+            "assists": 3,
+            "matches": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "eua",
+      "name": "EUA",
+      "victories": 0,
+      "description": "A Seleção dos Estados Unidos tem se consolidado como uma das principais forças do futebol na América do Norte. Conhecida pela intensidade física e competitividade, investe fortemente no desenvolvimento de jovens talentos. Seu crescimento tem aumentado sua presença em torneios internacionais.",
+      "badge": "",
+      "colors": ["#1F2742", "#BB2533"],
+      "coach": {
+        "id": "eua-coach",
+        "name": "Mauricio Pochettino",
+        "photo": "",
+        "description": "Treinador da Seleção dos Estados Unidos."
+      },
+      "players": [
+        {
+          "id": "eua-10",
+          "name": "Christian Pulisic",
+          "position": "Atacante",
+          "number": 10,
+          "photo": "",
+          "stats": {
+            "goals": 32,
+            "assists": 20,
+            "matches": 78
+          }
+        },
+        {
+          "id": "eua-8",
+          "name": "Weston McKennie",
+          "position": "Meio-campo",
+          "number": 8,
+          "photo": "",
+          "stats": {
+            "goals": 11,
+            "assists": 10,
+            "matches": 60
+          }
+        },
+        {
+          "id": "eua-20",
+          "name": "Folarin Balogun",
+          "position": "Atacante",
+          "number": 20,
+          "photo": "",
+          "stats": {
+            "goals": 6,
+            "assists": 3,
+            "matches": 20
+          }
+        },
+        {
+          "id": "eua-2",
+          "name": "Sergiño Dest",
+          "position": "Lateral",
+          "number": 2,
+          "photo": "",
+          "stats": {
+            "goals": 3,
+            "assists": 6,
+            "matches": 34
+          }
+        },
+        {
+          "id": "eua-1",
+          "name": "Matt Freese",
+          "position": "Goleiro",
+          "number": 1,
+          "photo": "",
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "matches": 10
+          }
         }
       ]
     }
