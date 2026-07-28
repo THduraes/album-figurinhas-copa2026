@@ -14,7 +14,13 @@
       "coach": {
         "id": "brasil-coach",
         "name": "Carlo Ancelotti",
-        "photo": "",
+        "photo": "android.resource://com.grupo.albumfigurinhas/drawable/coach_ancelotti",
+        "birthDate": "10/05/1959",
+        "stats": {
+          "wins": 9,
+          "losses": 3,
+          "matches": 15
+        },
         "description": "Treinador da Seleção Brasileira."
       },
       "players": [
@@ -23,7 +29,8 @@
           "name": "Neymar Jr.",
           "position": "Atacante",
           "number": 10,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_neymar_jr",
+          "birthDate": "05/02/1992",
           "stats": {
             "goals": 79,
             "assists": 55,
@@ -35,7 +42,7 @@
           "name": "Marquinhos",
           "position": "Zagueiro",
           "number": 3,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_marquinhos",
           "stats": {
             "goals": 7,
             "assists": 2,
@@ -47,7 +54,8 @@
           "name": "Vinicius Jr.",
           "position": "Atacante",
           "number": 7,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_vinicius_jr",
+          "birthDate": "12/07/2000",
           "stats": {
             "goals": 6,
             "assists": 5,
@@ -59,7 +67,8 @@
           "name": "Endrick",
           "position": "Atacante",
           "number": 19,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_endrick",
+          "birthDate": "21/07/2006",
           "stats": {
             "goals": 3,
             "assists": 0,
@@ -71,7 +80,8 @@
           "name": "Alisson",
           "position": "Goleiro",
           "number": 1,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_alisson",
+          "birthDate": "02/10/1992",
           "stats": {
             "goals": 0,
             "assists": 0,
@@ -90,7 +100,7 @@
       "coach": {
         "id": "franca-coach",
         "name": "Didier Deschamps",
-        "photo": "",
+        "photo": "android.resource://com.grupo.albumfigurinhas/drawable/deschamps_elenco",
         "description": "Treinador da Seleção Francesa."
       },
       "players": [
@@ -99,7 +109,8 @@
           "name": "Mbappé",
           "position": "Atacante",
           "number": 10,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_mbappe",
+          "birthDate": "20/12/1998",
           "stats": {
             "goals": 52,
             "assists": 34,
@@ -111,7 +122,8 @@
           "name": "Dembélé",
           "position": "Atacante",
           "number": 7,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_dembele",
+          "birthDate": "15/05/1997",
           "stats": {
             "goals": 7,
             "assists": 9,
@@ -123,7 +135,8 @@
           "name": "Doué",
           "position": "Atacante",
           "number": 14,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_doue",
+          "birthDate": "03/06/2005",
           "stats": {
             "goals": 1,
             "assists": 1,
@@ -135,7 +148,8 @@
           "name": "Olise",
           "position": "Meio-campo",
           "number": 11,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_olise",
+          "birthDate": "12/12/2001",
           "stats": {
             "goals": 5,
             "assists": 7,
@@ -147,7 +161,8 @@
           "name": "Maignan",
           "position": "Goleiro",
           "number": 16,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_maignan",
+          "birthDate": "03/07/1995",
           "stats": {
             "goals": 0,
             "assists": 0,
@@ -166,7 +181,7 @@
       "coach": {
         "id": "cabo-verde-coach",
         "name": "Bubista",
-        "photo": "",
+        "photo": "android.resource://com.grupo.albumfigurinhas/drawable/bubista_elenco",
         "description": "Treinador da Seleção de Cabo Verde."
       },
       "players": [
@@ -175,7 +190,8 @@
           "name": "Vozinha",
           "position": "Goleiro",
           "number": 1,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_vozinha",
+          "birthDate": "03/06/1986",
           "stats": {
             "goals": 0,
             "assists": 0,
@@ -187,7 +203,8 @@
           "name": "Duarte",
           "position": "Zagueiro",
           "number": 4,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_duarte",
+          "birthDate": "04/07/1999",
           "stats": {
             "goals": 1,
             "assists": 0,
@@ -199,7 +216,8 @@
           "name": "Livramento",
           "position": "Atacante",
           "number": 9,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_livramento",
+          "birthDate": "04/05/2001",
           "stats": {
             "goals": 4,
             "assists": 2,
@@ -211,7 +229,8 @@
           "name": "Ryan Mendes",
           "position": "Atacante",
           "number": 20,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_ryan_mendes",
+          "birthDate": "08/01/1990",
           "stats": {
             "goals": 20,
             "assists": 8,
@@ -223,7 +242,8 @@
           "name": "Benchimol",
           "position": "Atacante",
           "number": 11,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_benchimol",
+          "birthDate": "29/12/2001",
           "stats": {
             "goals": 3,
             "assists": 1,
@@ -242,7 +262,7 @@
       "coach": {
         "id": "japao-coach",
         "name": "Hajime Moriyasu",
-        "photo": "",
+        "photo": "android.resource://com.grupo.albumfigurinhas/drawable/hajime_elenco",
         "description": "Treinador da Seleção Japonesa."
       },
       "players": [
@@ -251,7 +271,8 @@
           "name": "Ritsu Doan",
           "position": "Meio-campo",
           "number": 10,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_doan",
+          "birthDate": "16/06/1998",
           "stats": {
             "goals": 10,
             "assists": 8,
@@ -263,7 +284,8 @@
           "name": "Ko Itakura",
           "position": "Zagueiro",
           "number": 4,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_itakura",
+          "birthDate": "27/01/1997",
           "stats": {
             "goals": 3,
             "assists": 2,
@@ -275,7 +297,8 @@
           "name": "Keito Nakamura",
           "position": "Atacante",
           "number": 13,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_nakamura",
+          "birthDate": "28/07/2000",
           "stats": {
             "goals": 8,
             "assists": 4,
@@ -287,7 +310,8 @@
           "name": "Zion Suzuki",
           "position": "Goleiro",
           "number": 23,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_suzuki",
+          "birthDate": "21/08/2002",
           "stats": {
             "goals": 0,
             "assists": 0,
@@ -299,7 +323,8 @@
           "name": "Ayase Ueda",
           "position": "Atacante",
           "number": 9,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_ueda",
+          "birthDate": "28/08/1998",
           "stats": {
             "goals": 14,
             "assists": 3,
@@ -318,7 +343,7 @@
       "coach": {
         "id": "eua-coach",
         "name": "Mauricio Pochettino",
-        "photo": "",
+        "photo": "android.resource://com.grupo.albumfigurinhas/drawable/pochettino_elenco",
         "description": "Treinador da Seleção dos Estados Unidos."
       },
       "players": [
@@ -327,7 +352,8 @@
           "name": "Christian Pulisic",
           "position": "Atacante",
           "number": 10,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_pulisic",
+          "birthDate": "18/09/1998",
           "stats": {
             "goals": 32,
             "assists": 20,
@@ -339,7 +365,8 @@
           "name": "Weston McKennie",
           "position": "Meio-campo",
           "number": 8,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_mckennie",
+          "birthDate": "28/08/1998",
           "stats": {
             "goals": 11,
             "assists": 10,
@@ -351,7 +378,8 @@
           "name": "Folarin Balogun",
           "position": "Atacante",
           "number": 20,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_balogun",
+          "birthDate": "03/07/2001",
           "stats": {
             "goals": 6,
             "assists": 3,
@@ -363,7 +391,8 @@
           "name": "Sergiño Dest",
           "position": "Lateral",
           "number": 2,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_dest",
+          "birthDate": "03/11/2000",
           "stats": {
             "goals": 3,
             "assists": 6,
@@ -375,7 +404,8 @@
           "name": "Matt Freese",
           "position": "Goleiro",
           "number": 1,
-          "photo": "",
+          "photo": "android.resource://com.grupo.albumfigurinhas/drawable/player_freese",
+          "birthDate": "02/09/1998",
           "stats": {
             "goals": 0,
             "assists": 0,
