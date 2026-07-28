@@ -28,7 +28,7 @@ import com.grupo.albumfigurinhas.ui.components.DetailInfoCard
 import com.grupo.albumfigurinhas.ui.components.DetailTag
 import com.grupo.albumfigurinhas.ui.components.StatRow
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
-import com.grupo.albumfigurinhas.ui.components.coachPhotoModel
+import com.grupo.albumfigurinhas.ui.components.coachDetailPhotoModel
 import com.grupo.albumfigurinhas.ui.components.teamAccentColor
 import com.grupo.albumfigurinhas.ui.state.UiState
 import com.grupo.albumfigurinhas.viewmodel.CoachDetail
@@ -54,7 +54,7 @@ fun CoachDetailScreen(
                 .verticalScroll(rememberScrollState()),
         ) {
             DetailHeroHeader(
-                photoModel = coachPhotoModel(detail.coach),
+                photoModel = coachDetailPhotoModel(detail.coach),
                 accentColor = accentColor,
                 onBack = onBack,
             )

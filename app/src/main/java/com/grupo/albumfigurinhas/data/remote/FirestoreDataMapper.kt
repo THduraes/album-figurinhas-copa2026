@@ -41,6 +41,7 @@ internal object FirestoreDataMapper {
             position = data.requiredString("position", "jogador $id"),
             number = data.requiredInt("number", "jogador $id"),
             photo = data.optionalString("photo"),
+            thumbnail = data.optionalString("thumbnail"),
             birthDate = data.optionalString("birthDate"),
             stats = stats,
         )
@@ -52,6 +53,7 @@ internal object FirestoreDataMapper {
             id = this["id"] as? String ?: defaultId,
             name = requiredString("name", "treinador da $context"),
             photo = optionalString("photo"),
+            thumbnail = optionalString("thumbnail"),
             description = optionalString("description"),
             birthDate = optionalString("birthDate"),
             stats = stats,

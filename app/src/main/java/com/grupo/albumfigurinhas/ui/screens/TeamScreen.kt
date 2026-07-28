@@ -53,8 +53,8 @@ import coil3.compose.AsyncImage
 import com.grupo.albumfigurinhas.R
 import com.grupo.albumfigurinhas.data.model.Team
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
-import com.grupo.albumfigurinhas.ui.components.coachPhotoModel
-import com.grupo.albumfigurinhas.ui.components.playerPhotoModel
+import com.grupo.albumfigurinhas.ui.components.coachCardPhotoModel
+import com.grupo.albumfigurinhas.ui.components.playerCardPhotoModel
 import com.grupo.albumfigurinhas.ui.state.UiState
 
 private val Poppins = FontFamily(
@@ -126,7 +126,7 @@ private fun TeamContent(
                 id = player.id,
                 name = player.name,
                 subtitle = "${player.number} - ${player.position}",
-                photoModel = playerPhotoModel(player),
+                photoModel = playerCardPhotoModel(player),
                 isCoach = false,
             )
         }
@@ -135,7 +135,7 @@ private fun TeamContent(
             id = team.coach.id,
             name = team.coach.name.substringAfterLast(" "),
             subtitle = "Treinador",
-            photoModel = coachPhotoModel(team.coach),
+            photoModel = coachCardPhotoModel(team.coach),
             isCoach = true,
         )
     }
