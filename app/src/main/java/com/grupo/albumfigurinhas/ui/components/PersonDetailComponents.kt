@@ -93,7 +93,8 @@ fun DetailHeroHeader(
                 model = photoModel,
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
+                alignment = Alignment.BottomCenter,
+                contentScale = ContentScale.Fit,
             )
         }
 

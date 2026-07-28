@@ -6,6 +6,7 @@ data class Player(
     val position: String = "",
     val number: Int = 0,
     val photo: String = "",
+    val thumbnail: String = "",
     val birthDate: String = "",
     val stats: PlayerStats? = null,
 )

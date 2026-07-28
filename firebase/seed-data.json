@@ -14,7 +14,8 @@
       "coach": {
         "id": "brasil-coach",
         "name": "Carlo Ancelotti",
-        "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/coach_ancelotti.png",
+        "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/ancelotti_elenco.webp",
+        "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/ancelotti_elenco.webp",
         "birthDate": "10/05/1959",
         "stats": {
           "wins": 9,
@@ -30,6 +31,7 @@
           "position": "Atacante",
           "number": 10,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_neymar_jr.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/neymar_elenco.webp",
           "birthDate": "05/02/1992",
           "stats": {
             "goals": 79,
@@ -43,6 +45,7 @@
           "position": "Zagueiro",
           "number": 3,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_marquinhos.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/marquinhos_elenco.webp",
           "stats": {
             "goals": 7,
             "assists": 2,
@@ -55,6 +58,7 @@
           "position": "Atacante",
           "number": 7,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_vinicius_jr.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/vini_elenco.webp",
           "birthDate": "12/07/2000",
           "stats": {
             "goals": 6,
@@ -68,6 +72,7 @@
           "position": "Atacante",
           "number": 19,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_endrick.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/endrick_elenco.webp",
           "birthDate": "21/07/2006",
           "stats": {
             "goals": 3,
@@ -81,6 +86,7 @@
           "position": "Goleiro",
           "number": 1,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_alisson.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/alisson_elenco.webp",
           "birthDate": "02/10/1992",
           "stats": {
             "goals": 0,
@@ -101,6 +107,7 @@
         "id": "franca-coach",
         "name": "Didier Deschamps",
         "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/deschamps_elenco.webp",
+        "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/deschamps_elenco.webp",
         "description": "Treinador da Seleção Francesa."
       },
       "players": [
@@ -110,6 +117,7 @@
           "position": "Atacante",
           "number": 10,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_mbappe.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/mbappe_elenco.webp",
           "birthDate": "20/12/1998",
           "stats": {
             "goals": 52,
@@ -123,6 +131,7 @@
           "position": "Atacante",
           "number": 7,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_dembele.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/dembele_elenco.webp",
           "birthDate": "15/05/1997",
           "stats": {
             "goals": 7,
@@ -136,6 +145,7 @@
           "position": "Atacante",
           "number": 14,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_doue.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/doue_elenco.webp",
           "birthDate": "03/06/2005",
           "stats": {
             "goals": 1,
@@ -149,6 +159,7 @@
           "position": "Meio-campo",
           "number": 11,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_olise.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/olise_elenco.webp",
           "birthDate": "12/12/2001",
           "stats": {
             "goals": 5,
@@ -162,6 +173,7 @@
           "position": "Goleiro",
           "number": 16,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_maignan.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/maignan_elenco.webp",
           "birthDate": "03/07/1995",
           "stats": {
             "goals": 0,
@@ -182,6 +194,7 @@
         "id": "cabo-verde-coach",
         "name": "Bubista",
         "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/bubista_elenco.webp",
+        "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/bubista_elenco.webp",
         "description": "Treinador da Seleção de Cabo Verde."
       },
       "players": [
@@ -191,6 +204,7 @@
           "position": "Goleiro",
           "number": 1,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_vozinha.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/vozinha_elenco.webp",
           "birthDate": "03/06/1986",
           "stats": {
             "goals": 0,
@@ -204,6 +218,7 @@
           "position": "Zagueiro",
           "number": 4,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_duarte.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/duarte_elenco.webp",
           "birthDate": "04/07/1999",
           "stats": {
             "goals": 1,
@@ -217,6 +232,7 @@
           "position": "Atacante",
           "number": 9,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_livramento.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/livramento_elenco.webp",
           "birthDate": "04/05/2001",
           "stats": {
             "goals": 4,
@@ -230,6 +246,7 @@
           "position": "Atacante",
           "number": 20,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_ryan_mendes.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/ryan_elenco.webp",
           "birthDate": "08/01/1990",
           "stats": {
             "goals": 20,
@@ -243,6 +260,7 @@
           "position": "Atacante",
           "number": 11,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_benchimol.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/benchimol_elenco.webp",
           "birthDate": "29/12/2001",
           "stats": {
             "goals": 3,
@@ -263,6 +281,7 @@
         "id": "japao-coach",
         "name": "Hajime Moriyasu",
         "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/hajime_elenco.webp",
+        "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/hajime_elenco.webp",
         "description": "Treinador da Seleção Japonesa."
       },
       "players": [
@@ -272,6 +291,7 @@
           "position": "Meio-campo",
           "number": 10,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_doan.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/doan_elenco.webp",
           "birthDate": "16/06/1998",
           "stats": {
             "goals": 10,
@@ -285,6 +305,7 @@
           "position": "Zagueiro",
           "number": 4,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_itakura.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/itakura_elenco.webp",
           "birthDate": "27/01/1997",
           "stats": {
             "goals": 3,
@@ -298,6 +319,7 @@
           "position": "Atacante",
           "number": 13,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_nakamura.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/nakamura_elenco.webp",
           "birthDate": "28/07/2000",
           "stats": {
             "goals": 8,
@@ -311,6 +333,7 @@
           "position": "Goleiro",
           "number": 23,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_suzuki.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/suzuki_elenco.webp",
           "birthDate": "21/08/2002",
           "stats": {
             "goals": 0,
@@ -324,6 +347,7 @@
           "position": "Atacante",
           "number": 9,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_ueda.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/ueda_elenco.webp",
           "birthDate": "28/08/1998",
           "stats": {
             "goals": 14,
@@ -344,6 +368,7 @@
         "id": "eua-coach",
         "name": "Mauricio Pochettino",
         "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/pochettino_elenco.webp",
+        "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/pochettino_elenco.webp",
         "description": "Treinador da Seleção dos Estados Unidos."
       },
       "players": [
@@ -353,6 +378,7 @@
           "position": "Atacante",
           "number": 10,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_pulisic.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/pulisic_elenco.webp",
           "birthDate": "18/09/1998",
           "stats": {
             "goals": 32,
@@ -366,6 +392,7 @@
           "position": "Meio-campo",
           "number": 8,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_mckennie.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/mckennie_elenco.webp",
           "birthDate": "28/08/1998",
           "stats": {
             "goals": 11,
@@ -379,6 +406,7 @@
           "position": "Atacante",
           "number": 20,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_balogun.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/balogun_elenco.webp",
           "birthDate": "03/07/2001",
           "stats": {
             "goals": 6,
@@ -392,6 +420,7 @@
           "position": "Lateral",
           "number": 2,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_dest.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/dest_elenco.webp",
           "birthDate": "03/11/2000",
           "stats": {
             "goals": 3,
@@ -405,6 +434,7 @@
           "position": "Goleiro",
           "number": 1,
           "photo": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/player_freese.png",
+          "thumbnail": "https://raw.githubusercontent.com/THduraes/album-figurinhas-copa2026/main/app/src/main/res/drawable/freese_elenco.webp",
           "birthDate": "02/09/1998",
           "stats": {
             "goals": 0,
