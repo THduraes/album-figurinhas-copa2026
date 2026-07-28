@@ -15,12 +15,18 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,14 +47,19 @@ private val HeroHeight = 320.dp
 
 /**
  * Cor de destaque da equipe usada como fundo das telas de jogador/treinador.
- * Escolhe a cor mais escura da paleta do time (evitando tons quase-brancos)
- * para manter o texto branco legivel; sem paleta, usa [fallback].
+ * Usa a primeira cor da paleta do time que nao seja quase-branca (mantendo o
+ * texto branco legivel), respeitando a ordem em que as cores oficiais foram
+ * declaradas — cores bem escuras (quase-pretas) sao aceitas de proposito, ja
+ * que varios times do design usam fundos assim; sem paleta ou sem candidata
+ * legivel, usa [fallback].
  */
 fun teamAccentColor(team: Team, fallback: Color): Color {
     val candidates = team.colors.mapNotNull { hex ->
         runCatching { Color(android.graphics.Color.parseColor(hex)) }.getOrNull()
-    }.filterNot { it.luminance() > 0.82f }
-    return candidates.minByOrNull { it.luminance() } ?: fallback
+    }
+    return candidates.firstOrNull { it.luminance() <= 0.6f }
+        ?: candidates.firstOrNull()
+        ?: fallback
 }
 
 @Composable
@@ -108,6 +119,21 @@ fun DetailHeroHeader(
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Voltar",
+                tint = Color.White,
+            )
+        }
+
+        var isFavorite by remember { mutableStateOf(false) }
+        IconButton(
+            onClick = { isFavorite = !isFavorite },
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(12.dp)
+                .background(Color.Black.copy(alpha = 0.35f), CircleShape),
+        ) {
+            Icon(
+                imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+                contentDescription = if (isFavorite) "Remover dos favoritos" else "Adicionar aos favoritos",
                 tint = Color.White,
             )
         }

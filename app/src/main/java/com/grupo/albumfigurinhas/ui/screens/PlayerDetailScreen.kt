@@ -11,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.TrendingUp
+import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.SportsScore
@@ -85,7 +86,9 @@ fun PlayerDetailScreen(
                     NumberBadge(number = detail.player.number)
                 }
 
-                detail.player.stats?.let { stats ->
+                val stats = detail.player.stats
+                val birthDate = detail.player.birthDate
+                if (stats != null || birthDate.isNotBlank()) {
                     DetailInfoCard {
                         Text(
                             text = "Estatísticas",
@@ -93,13 +96,18 @@ fun PlayerDetailScreen(
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                         )
-                        StatRow(Icons.Filled.SportsScore, "Jogos", stats.matches.toString())
-                        StatRow(Icons.Filled.SportsSoccer, "Gols", stats.goals.toString())
-                        StatRow(
-                            Icons.AutoMirrored.Filled.TrendingUp,
-                            "Assistências",
-                            stats.assists.toString(),
-                        )
+                        stats?.let {
+                            StatRow(Icons.Filled.SportsScore, "Jogos", it.matches.toString())
+                            StatRow(Icons.Filled.SportsSoccer, "Gols", it.goals.toString())
+                            StatRow(
+                                Icons.AutoMirrored.Filled.TrendingUp,
+                                "Assistências",
+                                it.assists.toString(),
+                            )
+                        }
+                        if (birthDate.isNotBlank()) {
+                            StatRow(Icons.Filled.CalendarMonth, "Data de Nascimento", birthDate)
+                        }
                     }
                 }
             }

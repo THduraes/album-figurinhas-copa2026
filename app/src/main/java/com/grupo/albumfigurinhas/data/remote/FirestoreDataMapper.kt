@@ -40,6 +40,7 @@ internal object FirestoreDataMapper {
             position = data.requiredString("position", "jogador $id"),
             number = data.requiredInt("number", "jogador $id"),
             photo = data.optionalString("photo"),
+            birthDate = data.optionalString("birthDate"),
             stats = stats,
         )
     }
