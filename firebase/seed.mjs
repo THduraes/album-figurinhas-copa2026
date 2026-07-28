@@ -37,7 +37,11 @@ for (const team of teams) {
   }
 }
 
-await batch.commit();
+try {
+  await batch.commit();
+} catch (error) {
+  throw productionAccessError(error);
+}
 console.log(
   `Carga concluida em ${projectId}: 1 competicao, ${teams.length} equipes e ${playerCount} jogadores.`,
 );
@@ -62,4 +66,27 @@ function validateSeed(data) {
       }
     }
   }
+}
+
+function productionAccessError(error) {
+  if (useEmulator) {
+    return error;
+  }
+
+  const message = error instanceof Error ? error.message : String(error);
+  if (error?.code === 16 || /default credentials|credential/i.test(message)) {
+    return new Error(
+      "Firebase real sem autenticacao. Execute `gcloud auth application-default login` e tente novamente.",
+      { cause: error },
+    );
+  }
+
+  if (error?.code === 7 || /permission/i.test(message)) {
+    return new Error(
+      "Conta sem permissao para gravar no Firestore. Solicite os papeis Cloud Datastore User e Service Usage Consumer.",
+      { cause: error },
+    );
+  }
+
+  return error;
 }

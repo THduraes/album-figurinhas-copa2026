@@ -34,6 +34,15 @@ npm.cmd run seed:emulator
 
 Para apenas validar a carga em uma instancia descartavel, use `npm.cmd run seed:emulator:once`; o comando inicia, preenche e encerra o Firestore automaticamente.
 
+Se a CLI informar que nao encontrou `java`, use o Java incluido no Android
+Studio durante a sessao atual do PowerShell:
+
+```powershell
+$env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
+$env:Path="$env:JAVA_HOME\bin;$env:Path"
+npm.cmd run seed:emulator:once
+```
+
 Defina `useFirebaseEmulator=true` no `local.properties`, sincronize o Gradle e execute o app. No emulador Android, o app conecta a `10.0.2.2:8080`. A interface do Firebase fica em `http://localhost:4000`.
 
 Para testar as regras automaticamente:
@@ -55,19 +64,55 @@ O arquivo `google-services.json` possui identificadores do projeto e esta ignora
 
 ## Carga inicial em producao
 
-O script usa o cliente oficial do Firestore para servidor e credenciais externas ao repositorio. No Console do Firebase, abra **Configuracoes do projeto > Contas de servico**, gere uma chave e defina seu caminho somente na sessao atual do PowerShell:
+`google-services.json` configura o aplicativo Android, mas nao autentica scripts
+administrativos. Para que um integrante execute o seed com a propria conta
+Google, o proprietario deve conceder estes papeis no IAM do projeto:
+
+- **Cloud Datastore User** (`roles/datastore.user`), para ler e gravar dados;
+- **Service Usage Consumer** (`roles/serviceusage.serviceUsageConsumer`), para
+  usar o projeto como cota das APIs.
+
+Conceda esses papeis somente aos integrantes responsaveis pelos dados. No Google
+Cloud Console, acesse **IAM e administrador > IAM > Permitir acesso**, informe o
+e-mail Google do integrante e adicione os dois papeis.
+
+Na maquina do integrante, instale a Google Cloud CLI e crie credenciais locais
+com a propria conta:
 
 ```powershell
-$env:GOOGLE_APPLICATION_CREDENTIALS="C:\caminho\seguro\service-account.json"
-cd firebase
-npm.cmd run seed:production -- --project SEU_FIREBASE_PROJECT_ID
+gcloud auth application-default login
+gcloud auth application-default set-quota-project album-figurinhas-copa2026
 ```
 
-A carga usa `set(..., merge: true)`, portanto pode ser repetida sem duplicar documentos. Antes da entrega, substitua os textos e estatisticas demonstrativos em `firebase/seed-data.json` pelos dados aprovados pelo grupo.
+Depois instale as dependencias e execute a carga:
+
+```powershell
+cd firebase
+npm.cmd ci
+npm.cmd run seed:production -- --project album-figurinhas-copa2026
+```
+
+A carga usa `set(..., merge: true)`, portanto pode ser repetida sem duplicar
+documentos. Antes de executar em producao, altere `firebase/seed-data.json`,
+teste no emulador, envie um Pull Request e aguarde a revisao. Execucoes
+simultaneas podem fazer a ultima carga sobrescrever campos alterados por outra.
+
+Quando a pessoa nao precisar mais executar scripts administrativos nessa
+maquina, pode remover as credenciais locais:
+
+```powershell
+gcloud auth application-default revoke
+```
+
+Nao gere nem compartilhe `firebase-adminsdk*.json` para esse fluxo. Credenciais
+ADC pertencem a cada integrante e respeitam os papeis concedidos no IAM.
 
 ## Regras e indices
 
-As regras permitem leitura publica somente em `competitions` e suas subcolecoes, e bloqueiam qualquer escrita pelo aplicativo. Escritas administrativas feitas pelo script ignoram as regras, por isso a chave de servico nunca deve entrar no Git.
+As regras permitem leitura publica somente em `competitions` e suas
+subcolecoes, e bloqueiam qualquer escrita pelo aplicativo. O script usa a
+biblioteca de servidor, ignora essas regras e autoriza cada operacao pelo IAM da
+conta Google autenticada.
 
 Para autenticar a CLI e publicar regras/indices:
 

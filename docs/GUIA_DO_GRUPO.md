@@ -172,6 +172,7 @@ Os acessos funcionam assim:
 | Somente `google-services.json` | Executar o app e ler os dados permitidos pelas regras |
 | Viewer no projeto Firebase | Consultar o Console, sem alterar os dados |
 | Editor no projeto Firebase | Criar e alterar documentos diretamente pelo Console |
+| Cloud Datastore User + Service Usage Consumer | Executar o seed com a propria conta Google |
 
 Mesmo que um integrante seja Editor no Console, as escritas feitas pelo
 aplicativo Android continuam bloqueadas pelas regras em `firestore.rules`. O
@@ -187,8 +188,8 @@ codigo, o grupo deve usar este fluxo:
    estatisticas e URLs de imagens.
 3. Teste a carga no Firebase Emulator.
 4. Envie a alteracao por Pull Request.
-5. Apos a revisao, o responsavel pela integracao aplica o seed no Firebase real
-   usando uma credencial administrativa temporaria e a revoga ao terminar.
+5. Apos a revisao, um responsavel autorizado aplica o seed no Firebase real
+   usando as credenciais ADC da propria conta Google.
 
 Para testar localmente:
 
@@ -197,6 +198,37 @@ cd firebase
 npm.cmd ci
 npm.cmd run seed:emulator:once
 ```
+
+Se o emulador nao localizar `java`, adicione temporariamente o Java do Android
+Studio ao `PATH`:
+
+```powershell
+$env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
+$env:Path="$env:JAVA_HOME\bin;$env:Path"
+npm.cmd run seed:emulator:once
+```
+
+Para publicar no Firebase real, o proprietario adiciona somente os responsaveis
+pelos dados no IAM com os papeis **Cloud Datastore User** e **Service Usage
+Consumer**. Cada responsavel instala a Google Cloud CLI e autentica a propria
+conta:
+
+```powershell
+gcloud auth application-default login
+gcloud auth application-default set-quota-project album-figurinhas-copa2026
+cd firebase
+npm.cmd ci
+npm.cmd run seed:production -- --project album-figurinhas-copa2026
+```
+
+O `google-services.json` nao participa desse comando. O script usa credenciais
+ADC e IAM, enquanto o aplicativo Android usa o arquivo de configuracao e as
+regras do Firestore. Nao altere `firestore.rules` para `allow write: if true` e
+nao compartilhe uma chave `firebase-adminsdk*.json` para contornar o acesso.
+
+Somente execute o seed real depois que a alteracao de `seed-data.json` estiver
+revisada e integrada. Duas pessoas executando versoes diferentes podem fazer a
+ultima carga sobrescrever campos da anterior.
 
 Um Editor pode alterar documentos manualmente pelo Console, mas essas mudancas
 nao ficam registradas no Git. Por isso, a edicao direta deve ser reservada para
