@@ -10,8 +10,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.SportsScore
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.grupo.albumfigurinhas.ui.components.DetailHeroHeader
 import com.grupo.albumfigurinhas.ui.components.DetailInfoCard
 import com.grupo.albumfigurinhas.ui.components.DetailTag
+import com.grupo.albumfigurinhas.ui.components.StatRow
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
 import com.grupo.albumfigurinhas.ui.components.teamAccentColor
 import com.grupo.albumfigurinhas.ui.state.UiState
@@ -69,6 +74,27 @@ fun CoachDetailScreen(
                     Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                         DetailTag(icon = Icons.Filled.Person, text = "Treinador")
                         DetailTag(icon = Icons.Filled.Flag, text = detail.team.name)
+                    }
+                }
+
+                val stats = detail.coach.stats
+                val birthDate = detail.coach.birthDate
+                if (stats != null || birthDate.isNotBlank()) {
+                    DetailInfoCard {
+                        Text(
+                            text = "Estatísticas",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                        )
+                        stats?.let {
+                            StatRow(Icons.Filled.SportsScore, "Jogos", it.matches.toString())
+                            StatRow(Icons.Filled.EmojiEvents, "Vitórias", it.wins.toString())
+                            StatRow(Icons.Filled.Close, "Derrotas", it.losses.toString())
+                        }
+                        if (birthDate.isNotBlank()) {
+                            StatRow(Icons.Filled.CalendarMonth, "Data de Nascimento", birthDate)
+                        }
                     }
                 }
 
