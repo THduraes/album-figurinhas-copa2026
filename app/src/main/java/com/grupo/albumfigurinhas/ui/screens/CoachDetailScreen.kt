@@ -1,59 +1,92 @@
-@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
-
 package com.grupo.albumfigurinhas.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.filled.Flag
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.grupo.albumfigurinhas.data.model.Coach
+import com.grupo.albumfigurinhas.ui.components.DetailHeroHeader
+import com.grupo.albumfigurinhas.ui.components.DetailInfoCard
+import com.grupo.albumfigurinhas.ui.components.DetailTag
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
+import com.grupo.albumfigurinhas.ui.components.teamAccentColor
 import com.grupo.albumfigurinhas.ui.state.UiState
+import com.grupo.albumfigurinhas.viewmodel.CoachDetail
 
 @Composable
 fun CoachDetailScreen(
-    uiState: UiState<Coach>,
+    uiState: UiState<CoachDetail>,
     onBack: () -> Unit,
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Scaffold(
-        modifier = modifier,
-        topBar = {
-            TopAppBar(
-                title = { Text("Treinador") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Voltar")
-                    }
-                },
+    UiStateContent(
+        state = uiState,
+        onRetry = onRetry,
+        modifier = modifier.fillMaxSize(),
+    ) { detail ->
+        val accentColor = teamAccentColor(detail.team, fallback = MaterialTheme.colorScheme.primary)
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(accentColor)
+                .verticalScroll(rememberScrollState()),
+        ) {
+            DetailHeroHeader(
+                photoUrl = detail.coach.photo,
+                accentColor = accentColor,
+                onBack = onBack,
             )
-        },
-    ) { innerPadding ->
-        UiStateContent(
-            state = uiState,
-            onRetry = onRetry,
-            modifier = Modifier.padding(innerPadding),
-        ) { coach ->
+
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(24.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
+                    .fillMaxWidth()
+                    .padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(20.dp),
             ) {
-                Text(coach.name, style = MaterialTheme.typography.headlineMedium)
-                Text(coach.description, style = MaterialTheme.typography.bodyLarge)
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text(
+                        text = detail.coach.name,
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color.White,
+                    )
+                    Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                        DetailTag(icon = Icons.Filled.Person, text = "Treinador")
+                        DetailTag(icon = Icons.Filled.Flag, text = detail.team.name)
+                    }
+                }
+
+                if (detail.coach.description.isNotBlank()) {
+                    DetailInfoCard {
+                        Text(
+                            text = "Perfil",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                        )
+                        Text(
+                            text = detail.coach.description,
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.White.copy(alpha = 0.9f),
+                        )
+                    }
+                }
             }
         }
     }
