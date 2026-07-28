@@ -24,7 +24,7 @@ import com.grupo.albumfigurinhas.viewmodel.TeamViewModel
 import com.grupo.albumfigurinhas.viewmodel.albumViewModelFactory
 import kotlinx.coroutines.delay
 
-private const val SPLASH_DURATION_MILLIS = 1200L
+private const val SPLASH_DURATION_MILLIS = 1800L
 
 @Composable
 fun AlbumNavGraph(repository: CompetitionRepository) {
