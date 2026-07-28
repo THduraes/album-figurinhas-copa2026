@@ -64,13 +64,13 @@ fun teamAccentColor(team: Team, fallback: Color): Color {
 
 @Composable
 fun DetailHeroHeader(
-    photoUrl: String,
+    photoModel: Any?,
     accentColor: Color,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Box(modifier.fillMaxWidth().height(HeroHeight)) {
-        if (photoUrl.isBlank()) {
+        if (photoModel == null || photoModel is String && photoModel.isBlank()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -90,7 +90,7 @@ fun DetailHeroHeader(
             }
         } else {
             AsyncImage(
-                model = photoUrl,
+                model = photoModel,
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop,

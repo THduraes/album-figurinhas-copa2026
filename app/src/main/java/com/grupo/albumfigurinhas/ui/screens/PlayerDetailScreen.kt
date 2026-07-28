@@ -30,6 +30,7 @@ import com.grupo.albumfigurinhas.ui.components.DetailTag
 import com.grupo.albumfigurinhas.ui.components.NumberBadge
 import com.grupo.albumfigurinhas.ui.components.StatRow
 import com.grupo.albumfigurinhas.ui.components.UiStateContent
+import com.grupo.albumfigurinhas.ui.components.playerPhotoModel
 import com.grupo.albumfigurinhas.ui.components.teamAccentColor
 import com.grupo.albumfigurinhas.ui.state.UiState
 import com.grupo.albumfigurinhas.viewmodel.PlayerDetail
@@ -55,7 +56,7 @@ fun PlayerDetailScreen(
                 .verticalScroll(rememberScrollState()),
         ) {
             DetailHeroHeader(
-                photoUrl = detail.player.photo,
+                photoModel = playerPhotoModel(detail.player),
                 accentColor = accentColor,
                 onBack = onBack,
             )
